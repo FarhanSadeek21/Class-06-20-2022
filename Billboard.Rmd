@@ -12,10 +12,28 @@ library(billboard)
 ```
 
 
-```{r setup, include=FALSE}
+```{r}
 glimpse(wiki_hot_100s)
 ```
 
 ```{r}
 summary(wiki_hot_100s)
 ```
+
+```{r}
+x <- wiki_hot_100s |>
+    as_tibble(wiki_hot_100s)
+
+```
+
+```{r}
+
+x <- x |>
+    select(artist) |>
+    group_by(artist) |>
+    summarize(artist_freq = n()) |>
+    arrange(desc(artist_freq)) |>
+    head(10)
+
+```
+
