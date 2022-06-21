@@ -29,6 +29,7 @@ x <- wiki_hot_100s |>
 ```{r}
 
 x <- x |>
+    mutate(year = as.numeric(year)) |>
     select(artist) |>
     group_by(artist) |>
     summarize(artist_freq = n()) |>
