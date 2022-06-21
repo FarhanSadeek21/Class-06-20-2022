@@ -8,14 +8,14 @@ date: '2022-06-21'
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
 library(primer.data)
+library(billboard)
 ```
 
 
 ```{r setup, include=FALSE}
-glimpse(billboard)
+glimpse(wiki_hot_100s)
 ```
 
 ```{r}
-
-summary(lyrics)
+summary(wiki_hot_100s)
 ```
