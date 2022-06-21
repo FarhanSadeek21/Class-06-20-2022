@@ -12,5 +12,5 @@ library(primer.data)
 
 
 ```{r setup, include=FALSE}
-View()
+glimpse(lyrics)
 ```
