@@ -12,5 +12,10 @@ library(primer.data)
 
 
 ```{r setup, include=FALSE}
-glimpse(lyrics)
+glimpse(billboard)
+```
+
+```{r}
+
+summary(lyrics)
 ```
