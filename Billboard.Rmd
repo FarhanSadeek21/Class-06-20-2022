@@ -27,14 +27,51 @@ x <- wiki_hot_100s |>
 ```
 
 ```{r}
+## Who appered the most ?
+x |>
+    # mutate(year = as.numeric(year)) |>
+    select(artist) |>
+    group_by(artist) |>
+    summarize(artist_freq = n()) |>
+    arrange(desc(artist_freq))
+```
 
-x <- x |>
-    mutate(year = as.numeric(year)) |>
+```{r}
+
+x |>
+    # mutate(year = as.numeric(year)) |>
     select(artist) |>
     group_by(artist) |>
     summarize(artist_freq = n()) |>
     arrange(desc(artist_freq)) |>
-    head(10)
-
+    filter(artist_freq == 1)
+    
 ```
 
+```{r}
+
+one_time <- x |>
+    # mutate(year = as.numeric(year)) |>
+    select(artist) |>
+    group_by(artist) |>
+    summarize(artist_freq = n()) |>
+    arrange(desc(artist_freq)) |>
+    filter(artist_freq == 1)
+    
+one_time <- nrow(one_time)
+print(one_time)
+     
+```
+
+
+
+
+```{r}
+
+year_most <- x |>
+    mutate(year = parse_number(year)) |>
+    group_by(year)
+
+nrow(year_most)
+    # arrange(desc(artist_count))
+```
